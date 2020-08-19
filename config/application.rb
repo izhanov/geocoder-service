@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
-class Application < Roda
-  opts[:root] = File.expand_path("..", __dir__)
-
-  plugin :json
-  plugin :all_verbs
-  plugin :param_matchers
-  plugin :request_headers
-
+class Application
   include Dry::Monads[:result]
+
+  class << self
+    attr_accessor :logger
+
+    def root
+      File.expand_path("..", __dir__)
+    end
+
+    def environment
+      ENV.fetch("RACK_ENV").to_sym
+    end
+  end
 end

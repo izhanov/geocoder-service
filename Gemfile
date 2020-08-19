@@ -6,13 +6,14 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 ruby "2.7.0"
 
+gem "bunny", "~> 2.15.0"
 gem "dotenv", "~> 2.7.5"
 gem "dry-monads", "~> 1.3.5"
 gem "dry-validation", "~> 1.5.1"
+gem "fast_jsonapi", "~> 1.5"
 gem "i18n"
-gem "puma", "~> 4.3.0"
+gem "ougai", "~> 1.8.5"
 gem "rake", "~> 13.0.1"
-gem "roda", "~> 3.32"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

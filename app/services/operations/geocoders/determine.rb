@@ -5,7 +5,7 @@ require "csv"
 module Operations
   module Geocoders
     class Determine
-      DATA_PATH = File.join(Application.opts[:root], "db/data/city.csv")
+      DATA_PATH = File.join(Application.root, "db/data/city.csv")
 
       def call(city)
         return if city.nil?

@@ -6,7 +6,7 @@ require "bundler/setup"
 Bundler.require(:default, ENV["RACK_ENV"])
 
 require "dotenv"
-Dotenv.load(".env", ".env.#{ENV["RACK_ENV"]}")
+Dotenv.load(".env.#{ENV["RACK_ENV"]}", ".env")
 
 
 require_relative "boot"
